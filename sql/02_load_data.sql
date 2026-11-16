@@ -1,0 +1,9 @@
+\copy cities FROM 'cities.csv' WITH (FORMAT csv, HEADER true);
+\copy users FROM 'users.csv' WITH (FORMAT csv, HEADER true);
+\copy bank_accounts FROM 'bank_accounts.csv' WITH (FORMAT csv, HEADER true);
+\copy vpas FROM 'vpas.csv' WITH (FORMAT csv, HEADER true);
+\copy merchants FROM 'merchants.csv' WITH (FORMAT csv, HEADER true);
+\copy transactions FROM 'transactions.csv' WITH (FORMAT csv, HEADER true);
+\copy bill_payments FROM 'bill_payments.csv' WITH (FORMAT csv, HEADER true);
+\copy rewards FROM 'rewards.csv' WITH (FORMAT csv, HEADER true);
+\copy disputes FROM 'disputes.csv' WITH (FORMAT csv, HEADER true);
