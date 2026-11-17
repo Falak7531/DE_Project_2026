@@ -1,0 +1,45 @@
+=== R21 run 1 ===
+Limit  (cost=81.05..81.11 rows=25 width=47) (actual time=1.173..1.176 rows=25.00 loops=1)
+  Buffers: shared hit=38
+  ->  Sort  (cost=81.05..81.81 rows=303 width=47) (actual time=1.173..1.174 rows=25.00 loops=1)
+        Sort Key: merchant_name
+        Sort Method: top-N heapsort  Memory: 30kB
+        Buffers: shared hit=38
+        ->  Seq Scan on merchants  (cost=0.00..72.50 rows=303 width=47) (actual time=0.009..1.103 rows=300.00 loops=1)
+              Filter: ((merchant_name)::text ~~* '%chai%'::text)
+              Rows Removed by Filter: 2700
+              Buffers: shared hit=35
+Planning:
+  Buffers: shared hit=87
+Planning Time: 1.510 ms
+Execution Time: 1.187 ms
+=== R21 run 2 ===
+Limit  (cost=81.05..81.11 rows=25 width=47) (actual time=1.102..1.104 rows=25.00 loops=1)
+  Buffers: shared hit=38
+  ->  Sort  (cost=81.05..81.81 rows=303 width=47) (actual time=1.102..1.102 rows=25.00 loops=1)
+        Sort Key: merchant_name
+        Sort Method: top-N heapsort  Memory: 30kB
+        Buffers: shared hit=38
+        ->  Seq Scan on merchants  (cost=0.00..72.50 rows=303 width=47) (actual time=0.009..1.035 rows=300.00 loops=1)
+              Filter: ((merchant_name)::text ~~* '%chai%'::text)
+              Rows Removed by Filter: 2700
+              Buffers: shared hit=35
+Planning:
+  Buffers: shared hit=87
+Planning Time: 0.216 ms
+Execution Time: 1.115 ms
+=== R21 run 3 ===
+Limit  (cost=81.05..81.11 rows=25 width=47) (actual time=1.095..1.097 rows=25.00 loops=1)
+  Buffers: shared hit=38
+  ->  Sort  (cost=81.05..81.81 rows=303 width=47) (actual time=1.094..1.095 rows=25.00 loops=1)
+        Sort Key: merchant_name
+        Sort Method: top-N heapsort  Memory: 30kB
+        Buffers: shared hit=38
+        ->  Seq Scan on merchants  (cost=0.00..72.50 rows=303 width=47) (actual time=0.009..1.025 rows=300.00 loops=1)
+              Filter: ((merchant_name)::text ~~* '%chai%'::text)
+              Rows Removed by Filter: 2700
+              Buffers: shared hit=35
+Planning:
+  Buffers: shared hit=87
+Planning Time: 0.222 ms
+Execution Time: 1.109 ms
