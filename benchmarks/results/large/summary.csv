@@ -1,0 +1,55 @@
+dataset_size,users,configuration,partitioning,operation,execution_time_ms,rows_processed,throughput_rows_per_second,measurement_status
+10000,1597,non_partitioned,no,User-specific transaction retrieval,0.021,10,476190,measured
+10000,1597,non_partitioned,no,Date-range transaction filtering,0.129,1,7751,measured
+10000,1597,non_partitioned,no,Category-based filtering (P2M),0.969,20,20639,measured
+10000,1597,non_partitioned,no,Monthly spending aggregation,2.276,19,8347,measured
+10000,1597,non_partitioned,no,Dashboard summary query,1.318,1,758,measured
+10000,1597,non_partitioned,no,Duplicate transaction detection,1.49,0,0,measured
+10000,1597,non_partitioned,no,Top merchants aggregation,0.203,10,49261,measured
+10000,1597,non_partitioned,no,Daily success rate (June 2026),0.203,30,147783,measured
+10000,1597,non_partitioned,no,Bulk transaction insertion (1000 rows),12.972,1000,77086,measured
+10000,1597,partitioned,yes,User-specific transaction retrieval,0.093,10,107526,measured
+10000,1597,partitioned,yes,Date-range transaction filtering,0.085,1,11764,measured
+10000,1597,partitioned,yes,Category-based filtering (P2M),1.284,20,15576,measured
+10000,1597,partitioned,yes,Monthly spending aggregation,2.588,19,7341,measured
+10000,1597,partitioned,yes,Dashboard summary query,1.816,1,550,measured
+10000,1597,partitioned,yes,Duplicate transaction detection,1.994,0,0,measured
+10000,1597,partitioned,yes,Top merchants aggregation,0.17,10,58823,measured
+10000,1597,partitioned,yes,Daily success rate (June 2026),0.16,30,187499,measured
+10000,1597,partitioned,yes,Bulk transaction insertion (1000 rows),15.019,1000,66583,measured
+100000,15970,non_partitioned,no,User-specific transaction retrieval,0.019,4,210526,measured
+100000,15970,non_partitioned,no,Date-range transaction filtering,1.241,1,805,measured
+100000,15970,non_partitioned,no,Category-based filtering (P2M),10.074,20,1985,measured
+100000,15970,non_partitioned,no,Monthly spending aggregation,24.885,19,763,measured
+100000,15970,non_partitioned,no,Dashboard summary query,9.075,1,110,measured
+100000,15970,non_partitioned,no,Duplicate transaction detection,19.116,0,0,measured
+100000,15970,non_partitioned,no,Top merchants aggregation,2.086,10,4793,measured
+100000,15970,non_partitioned,no,Daily success rate (June 2026),1.885,30,15915,measured
+100000,15970,non_partitioned,no,Bulk transaction insertion (1000 rows),18.377,1000,54416,measured
+100000,15970,partitioned,yes,User-specific transaction retrieval,0.076,4,52631,measured
+100000,15970,partitioned,yes,Date-range transaction filtering,0.642,1,1557,measured
+100000,15970,partitioned,yes,Category-based filtering (P2M),11.696,20,1709,measured
+100000,15970,partitioned,yes,Monthly spending aggregation,26.843,19,707,measured
+100000,15970,partitioned,yes,Dashboard summary query,9.153,1,109,measured
+100000,15970,partitioned,yes,Duplicate transaction detection,23.798,0,0,measured
+100000,15970,partitioned,yes,Top merchants aggregation,1.332,10,7507,measured
+100000,15970,partitioned,yes,Daily success rate (June 2026),1.242,30,24154,measured
+100000,15970,partitioned,yes,Bulk transaction insertion (1000 rows),18.716,1000,53428,measured
+500000,79850,non_partitioned,no,User-specific transaction retrieval,0.021,3,142857,measured
+500000,79850,non_partitioned,no,Date-range transaction filtering,7.804,1,128,measured
+500000,79850,non_partitioned,no,Category-based filtering (P2M),24.991,20,800,measured
+500000,79850,non_partitioned,no,Monthly spending aggregation,147.073,19,129,measured
+500000,79850,non_partitioned,no,Dashboard summary query,30.567,1,32,measured
+500000,79850,non_partitioned,no,Duplicate transaction detection,80.79,0,0,measured
+500000,79850,non_partitioned,no,Top merchants aggregation,10.466,10,955,measured
+500000,79850,non_partitioned,no,Daily success rate (June 2026),10.249,30,2927,measured
+500000,79850,non_partitioned,no,Bulk transaction insertion (1000 rows),39.865,1000,25084,measured
+500000,79850,partitioned,yes,User-specific transaction retrieval,0.109,3,27522,measured
+500000,79850,partitioned,yes,Date-range transaction filtering,3.422,1,292,measured
+500000,79850,partitioned,yes,Category-based filtering (P2M),32.166,20,621,measured
+500000,79850,partitioned,yes,Monthly spending aggregation,149.278,19,127,measured
+500000,79850,partitioned,yes,Dashboard summary query,37.799,1,26,measured
+500000,79850,partitioned,yes,Duplicate transaction detection,510.861,0,0,measured
+500000,79850,partitioned,yes,Top merchants aggregation,5.891,10,1697,measured
+500000,79850,partitioned,yes,Daily success rate (June 2026),6.406,30,4683,measured
+500000,79850,partitioned,yes,Bulk transaction insertion (1000 rows),46.396,1000,21553,measured

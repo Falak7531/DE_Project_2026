@@ -217,7 +217,7 @@ def generate_synthetic_data(num_transactions):
         fname = users[uid - 1][1].split()[0].lower()
         lname = users[uid - 1][1].split()[-1].lower()
         suffix = random.choice(VPA_SUFFIXES)
-        vpa = f"{fname}.{lname}{uid}{suffix}"
+        vpa = f"{fname}.{lname}{uid}_{aid_val}{suffix}"
         is_active = 't' if random.random() > 0.05 else 'f'
         created_at = account[7]
         vpas.append((vpa, uid, aid_val, is_active, created_at))
@@ -296,20 +296,16 @@ def generate_synthetic_data(num_transactions):
     
     data['transactions'] = transactions
     
+    # Fast lookup for VPA to user_id
+    vpa_to_uid = {v[0]: v[1] for v in vpas}
+
     # Rewards (linked to some transactions)
     rewards = []
     txn_ids_for_rewards = random.sample(range(1, num_transactions + 1), min(num_rewards, num_transactions))
     for rid, txn_id in enumerate(txn_ids_for_rewards, 1):
         txn = transactions[txn_id - 1]
         uid_vpa = txn[3]  # payer_vpa
-        # Find user_id from VPA
-        uid = None
-        for v in vpas:
-            if v[0] == uid_vpa:
-                uid = v[1]
-                break
-        if uid is None:
-            uid = random.randint(1, num_users)
+        uid = vpa_to_uid.get(uid_vpa, random.randint(1, num_users))
         
         reward_type = random.choice(['CASHBACK', 'SCRATCH_CARD'])
         r_amount = round(random.uniform(5, 100), 2)
@@ -350,13 +346,7 @@ def generate_synthetic_data(num_transactions):
     for did, txn_id in enumerate(txn_ids_for_disputes, 1):
         txn = transactions[txn_id - 1]
         uid_vpa = txn[3]
-        uid = None
-        for v in vpas:
-            if v[0] == uid_vpa:
-                uid = v[1]
-                break
-        if uid is None:
-            uid = random.randint(1, num_users)
+        uid = vpa_to_uid.get(uid_vpa, random.randint(1, num_users))
         
         reason = random.choice(DISPUTE_REASONS)
         raised_at = datetime.fromisoformat(txn[8]) + timedelta(hours=random.randint(1, 72))
